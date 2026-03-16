@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "Speak-Y.speech-to-text-whisper",
+    "ms-vscode.vscode-speech",
+    "siesing.vscode2slack"
+  ],
+  "unwantedRecommendations": []
+}

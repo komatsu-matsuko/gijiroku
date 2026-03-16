@@ -1,0 +1,717 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>渥美 知久</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f65a107b-4b1a-4303-b741-6570aa73d7e9" class="page sans"><header><img class="page-cover-image" src="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/Screenshot_20250711_160744_Chrome.jpg" style="object-position:center 100%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏧</span></div><h1 class="page-title" dir="auto">渥美 知久</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/drafts_gray.svg" style="width:14px;height:14px;display:block"/></span>フリガナ</th><td>アツミ トモヒサ</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/mouth_gray.svg" style="width:14px;height:14px;display:block"/></span>ニックネーム</th><td>あっちゃん、ともくん</td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/cake_gray.svg" style="width:14px;height:14px;display:block"/></span>誕生日</th><td><time>@1988年7月11日</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/user_gray.svg" style="width:14px;height:14px;display:block"/></span>チーム</th><td><span class="selected-value select-value-color-orange">テナント</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/chair_gray.svg" style="width:14px;height:14px;display:block"/></span>役職</th><td><span class="selected-value select-value-color-orange">社員</span></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>入社日</th><td><time>@2023年10月3日</time></td></tr><tr class="property-row property-row-formula"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrows-horizontal_gray.svg" style="width:14px;height:14px;display:block"/></span>社歴</th><td>29.2 か月</td></tr><tr class="property-row property-row-email"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/username_gray.svg" style="width:14px;height:14px;display:block"/></span>メール</th><td><a href="t.atsumi@bremen.band" class="url-value">t.atsumi@bremen.band</a></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/emoji_gray.svg" style="width:14px;height:14px;display:block"/></span>気質</th><td><span class="selected-value select-value-color-purple">NT型</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/suit-heart_gray.svg" style="width:14px;height:14px;display:block"/></span>※性格</th><td><span class="selected-value select-value-color-purple">ENTJ　指揮官</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/graduate_gray.svg" style="width:14px;height:14px;display:block"/></span>資質</th><td><span class="selected-value select-value-color-purple">実行力</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star-outline_gray.svg" style="width:14px;height:14px;display:block"/></span>※資質ベスト5</th><td><span class="selected-value select-value-color-orange">コミュニケーション</span><span class="selected-value select-value-color-purple">信念</span><span class="selected-value select-value-color-purple">公平性</span><span class="selected-value select-value-color-green">分析思考</span><span class="selected-value select-value-color-orange">最上志向</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star-outline_gray.svg" style="width:14px;height:14px;display:block"/></span>資質6〜15位</th><td><span class="selected-value select-value-color-purple">アレンジ</span><span class="selected-value select-value-color-green">未来志向</span><span class="selected-value select-value-color-orange">活発性</span><span class="selected-value select-value-color-orange">自我</span><span class="selected-value select-value-color-purple">規律性</span><span class="selected-value select-value-color-blue">親密性</span><span class="selected-value select-value-color-blue">調和性</span><span class="selected-value select-value-color-purple">責任感</span><span class="selected-value select-value-color-purple">達成欲</span><span class="selected-value select-value-color-blue">適応性</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star-outline_gray.svg" style="width:14px;height:14px;display:block"/></span>資質16〜25位</th><td><span class="selected-value select-value-color-blue">個別化</span><span class="selected-value select-value-color-blue">共感性</span><span class="selected-value select-value-color-purple">回復志向</span><span class="selected-value select-value-color-green">学習欲</span><span class="selected-value select-value-color-purple">慎重さ</span><span class="selected-value select-value-color-blue">成長促進</span><span class="selected-value select-value-color-purple">目標志向</span><span class="selected-value select-value-color-orange">社交性</span><span class="selected-value select-value-color-orange">競争性</span><span class="selected-value select-value-color-orange">自己確信</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star-outline_gray.svg" style="width:14px;height:14px;display:block"/></span>資質26〜34位</th><td><span class="selected-value select-value-color-blue">ポジティブ</span><span class="selected-value select-value-color-green">内省</span><span class="selected-value select-value-color-blue">包含</span><span class="selected-value select-value-color-green">原点思考</span><span class="selected-value select-value-color-green">収集心</span><span class="selected-value select-value-color-green">戦略性</span><span class="selected-value select-value-color-orange">指令性</span><span class="selected-value select-value-color-green">着想</span><span class="selected-value select-value-color-blue">運命思考</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/people_gray.svg" style="width:14px;height:14px;display:block"/></span>血液型</th><td><span class="selected-value select-value-color-purple">O型</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/child_gray.svg" style="width:14px;height:14px;display:block"/></span>接客方法</th><td><span class="selected-value select-value-color-brown">丁寧</span><span class="selected-value select-value-color-green">友営</span><span class="selected-value select-value-color-purple">真面目</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/apple_gray.svg" style="width:14px;height:14px;display:block"/></span>味覚</th><td><span class="selected-value select-value-color-blue">しょっぱい</span><span class="selected-value select-value-color-pink">甘い</span><span class="selected-value select-value-color-red">辛い</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/description_gray.svg" style="width:14px;height:14px;display:block"/></span>前職</th><td>docomoショップ</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/boombox_gray.svg" style="width:14px;height:14px;display:block"/></span>趣味</th><td><span class="selected-value select-value-color-red">アウトドア</span><span class="selected-value select-value-color-yellow">インドア</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-southeast_gray.svg" style="width:14px;height:14px;display:block"/></span>趣味の詳細</th><td><a href="https://genshin.hoyoverse.com/ja">原神</a>（ゲーム、グッズ集め）、ディズニー（観るのも行くのも好き）、料理（作る、食べる）</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/champagne-bottle_gray.svg" style="width:14px;height:14px;display:block"/></span>お酒の種類</th><td><span class="selected-value select-value-color-pink">カクテル</span><span class="selected-value select-value-color-yellow">ビール</span><span class="selected-value select-value-color-green">レモンサワー</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/champagne_gray.svg" style="width:14px;height:14px;display:block"/></span>お酒の飲み方</th><td><span class="selected-value select-value-color-brown">ガブガブ</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clover-four-leaf_gray.svg" style="width:14px;height:14px;display:block"/></span>マイブーム</th><td>YBAグループのブランド大会の配信を見る</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/bus_gray.svg" style="width:14px;height:14px;display:block"/></span>デートに行くなら？</th><td>相手の行きたいところならどこでも行きます（相手が楽しんでくれるところ）</td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好みの異性の体型</th><td><span class="selected-value select-value-color-brown">ぽっちゃり</span><span class="selected-value select-value-color-yellow">普通</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/airplane_gray.svg" style="width:14px;height:14px;display:block"/></span>出身地</th><td><a href="https://www.city.hamamatsu.shizuoka.jp/">静岡県浜松市</a></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きな季節</th><td><span class="selected-value select-value-color-default">冬</span><span class="selected-value select-value-color-orange">秋</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/emoji-grinning_gray.svg" style="width:14px;height:14px;display:block"/></span>長所</th><td><a href="https://domani.shogakukan.co.jp/313438">負けず嫌い</a>、好きな物好きな事には全力投球、<a href="https://domani.shogakukan.co.jp/397942">マメな所</a>、</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/emoji-sad_gray.svg" style="width:14px;height:14px;display:block"/></span>短所</th><td>メンタル激弱、調子に乗る、興味のない事はすぐ飽きるし続かない、顔に出やすい すぐ拗ねる　文章力が無い　伝えるのが苦手</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きな食べ物</th><td><a href="https://www.orangepage.net/recipes/search/4">じゃがいも</a>、<a href="https://www.meg-snow.com/cheeseclub/knowledge/shurui/">チーズ</a>、<a href="https://www.kagome.co.jp/vegeday/yasai/garlic/">にんにく</a>　<a href="https://ja.wikipedia.org/wiki/%E9%AD%9A%E4%BB%8B%E9%A1%9E">魚介　</a>お酒→<a href="https://www.heineken.com/jp/ja/home">ビール</a>、<a href="https://cocktailrecipe.suntory.co.jp/wnb/cocktail/recipe/gin_tonic/">カクテル</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きなアーティスト</th><td><a href="https://www.yoasobi-music.jp/">YOASOBI</a>、<a href="https://jsoulb.jp/">三代目</a>、<a href="https://exile.jp/">EXILE</a>、<a href="https://www.acidblackcherry.com/">ABC</a>　<strong><a href="https://ja.wikipedia.org/wiki/Janne_Da_Arc">Janne Da Arc</a></strong><strong>　</strong><strong><a href="https://www.youtube.com/channel/UCQn1FqrR2OCjSe6Nl4GlVHw">Raon</a></strong><strong>  timelesz</strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きな動物</th><td><a href="https://vespertine.jp/?blog=lop-eared-rabbit">ウサギ（特にロップイヤー）</a><a href="https://ja.wikipedia.org/wiki/%E6%9F%B4%E7%8A%AC">柴犬</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きな色</th><td><a href="https://www2.fashion-guide.jp/color/deep-blue.html">青</a>、<a href="https://ja.wikipedia.org/wiki/%E9%BB%92">黒（黒は300色ある）</a><a href="https://www.colordic.org/p">パステルカラー</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きな漫画、アニメ</th><td><a href="https://jojo-portal.com/">ジョジョ</a>、<a href="https://slamdunk-movie.jp/">スラムダンク</a>、<a href="https://yanmaga.jp/comics/%E8%B3%AD%E5%8D%9A%E5%A0%95%E5%A4%A9%E9%8C%B2%E3%82%AB%E3%82%A4%E3%82%B8_%EF%BC%92%EF%BC%94%E5%84%84%E8%84%B1%E5%87%BA%E7%B7%A8">カイジ</a>、<a href="https://one-piece.com/index.html">ワンピース</a>、<a href="https://www.disney.co.jp/studio/animation/0269">美女と野獣</a>、<a href="https://www.tv-asahi.co.jp/shinchan/">クレヨンしんちゃん</a>、<a href="https://www.tv-asahi.co.jp/bj/">ブラックジャック</a>、<a href="https://kenkadokugaku.com/">喧嘩独学</a>、<a href="https://manga.line.me/product/periodic?id=Z0000712">人生崩壊</a>、<a href="https://tokyo-revengers-anime.com/"><strong>東京卍リベンジャーズ</strong></a><strong>、</strong><a href="https://ichigoproduction.com/"><strong>推しの子</strong></a><strong>、</strong><a href="https://piccoma.com/web/product/4267?etype=episode"><strong>囚人リク、</strong></a><a href="https://piccoma.com/web/product/3246?etype=episode"><strong>Gメン</strong></a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きなお菓子</th><td><a href="https://www.auntstella.co.jp/">クッキー（固いやつ）</a><a href="https://www.mitsubishi-shokuhin.com/confectionery/haribo/">グミ（固いやつ尚且つ酸っぱくないやつ）</a><a href="https://www.wazanokodawari.com/">せんべい</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きなキャラクター</th><td><a href="https://dic.pixiv.net/a/%E8%83%A1%E6%A1%83%28%E5%8E%9F%E7%A5%9E%29">胡桃（原神）</a><a href="https://genshin-impact.fandom.com/ja/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8A"><strong>フリーナ（原神）</strong></a><a href="https://dic.pixiv.net/a/%E3%81%86%E3%81%95%E3%81%8E%28%E3%81%A1%E3%81%84%E3%81%8B%E3%82%8F%29">うさぎ（ちいかわ）</a><a href="https://www.disney.co.jp/fc/aristocats/character/marie">マリーちゃん（ディズニー</a>）　<a href="https://www.disney.co.jp/fc/pooh">プーさん（ディズニー）</a><a href="https://www.disney.co.jp/fc/bambi/character/tonsuke">とんすけ（ディズニー）</a><a href="https://disney.fandom.com/ja/wiki/%E3%83%95%E3%82%A3%E3%82%AC%E3%83%AD">フィガロ（ディズニー）</a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart_gray.svg" style="width:14px;height:14px;display:block"/></span>好きなブランド</th><td><a href="https://nubiantokyo.com/collections/vetements"><strong>VETEMENTS </strong></a>、<a href="https://www.balenciaga.com/ja-jp"><strong>バレンシアガ</strong></a>、<a href="https://en.miharayasuhiro.jp/"><strong>Maison MIHARA YASUHIRO</strong></a><strong>、</strong><a href="https://zozo.jp/shop/maisonkitsune/"><strong>Maison Kitsune</strong></a><strong>、</strong><a href="https://www.ssense.com/ja-jp/men/designers/dries-van-noten"><strong>Dries Van Noten </strong></a><strong>　</strong><a href="https://www.maisonmargiela.com/ja-jp/"><strong> </strong></a><a href="https://maisonmargiela.norennoren.jp/products/list.php?category_id=10"><strong>Maison Margiela</strong></a><strong>　</strong><a href="https://humanmade.jp/"><strong>HUMAN MADE</strong></a><strong>　</strong><a href="https://www.dsquared2.com/jp/%E3%83%A1%E3%83%B3%E3%82%BA"><strong>DSQUARED2.</strong></a><strong>　</strong><a href="https://jp.louisvuitton.com/jpn-jp/homepage?gad_source=1&amp;gclid=CjwKCAjwl4yyBhAgEiwADSEjeK6GfyT28nkCoA__ZO20jPyJ8OgXaMrbPfgQEsTOy4LLgnVRPIC-JhoC4TYQAvD_BwE"><strong>Louis Vuitton、</strong></a><a href="https://www.ysl.com/ja-jp/%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%82%A2---%E3%82%A6%E3%82%A3%E3%83%A1%E3%83%B3%E3%82%BA/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC/%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC?gad_source=1&amp;gclid=CjwKCAjwl4yyBhAgEiwADSEjeF9v0VRqhCnZ_7lMAE4Fhw5I9remL3F7mNSoZjJG-QnOgD79jp-qYBoCSDUQAvD_BwE&amp;gclsrc=aw.ds"><strong>SAINT LOURENT</strong></a></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/movie-clapboard-play_gray.svg" style="width:14px;height:14px;display:block"/></span>よく見るYouTube</th><td><strong><a href="https://www.youtube.com/channel/UCypYz0HzH-2oL7mdP-JK2yQ">おろちんゆー </a></strong>、<strong><a href="https://www.youtube.com/channel/UCJZVj2iBrdvbNc416i0V-UA">朝倉未来 </a></strong>、<strong><a href="https://www.youtube.com/c/nerumero">ねるめろ </a></strong>、<strong><a href="https://www.youtube.com/channel/UC-z9BHSVtBEOJPkGBIfEPSA">Somen Channel </a></strong><strong>　</strong><strong><a href="https://www.youtube.com/c/grandchefmatsuo">Grand Chef MATSUO</a></strong><strong>　</strong><strong><a href="https://www.youtube.com/channel/UCEA8Umn4azMfY2-qic1lCOA">タケヤキ翔/ラトゥラトゥ</a></strong><strong>　</strong><strong><a href="https://www.youtube.com/channel/UCL6JY2DXJNDOIqCP1CRADng">エガちゃんねる EGA-CHANNEL</a></strong><strong>　</strong><strong><a href="https://www.youtube.com/@pockysweets">ポッキー</a></strong><strong>　</strong><strong><a href="https://www.youtube.com/channel/UCjT8HuAXPxiWV1R9nBeUbhw">山d</a></strong><strong>　</strong><strong><a href="https://www.youtube.com/@ybagroup">YBAGROUPチャンネル</a></strong><strong>  </strong><strong><a href="https://www.youtube.com/@kabukicholcolle"> エルコレ～歌舞伎超TV～</a></strong></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/star-outline_gray.svg" style="width:14px;height:14px;display:block"/></span>座右の銘</th><td>前提を作ってから褒める</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/heart-rate_gray.svg" style="width:14px;height:14px;display:block"/></span>過去のトラウマ</th><td>今現在進行形</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/emoji-winking_gray.svg" style="width:14px;height:14px;display:block"/></span>得意なこと</th><td>ゲーム、カラオケ、人と仲良くなること、</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/directional-sign-right_gray.svg" style="width:14px;height:14px;display:block"/></span>2025年の目標</th><td>阿倉川の育成＆自身のレベルアップ</td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/thought-alert_gray.svg" style="width:14px;height:14px;display:block"/></span>最後に一言</th><td>黒字安定させるよう頑張ります。</td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><div id="cb58d53f-02e4-4a48-9db7-ad4005bbb5f6" class="column-list"><div style="display:contents" dir="auto"><div id="4b95f11f-2d74-43a0-9caf-896695265587" style="width:87.5%" class="column"><div style="display:contents" dir="ltr"><figure id="38a9dfbc-3026-409a-bb0f-50615267f67a" class="image"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/Untitled.png"><img style="width:708px" src="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/Untitled.png"/></a></figure></div><div style="display:contents" dir="ltr"><div id="c85591e1-854c-4882-bbb7-b7127a0eabbc" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名前</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>タグ</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>作成日時</th></tr></thead><tbody><tr id="f61ad5ce-5341-428d-a200-dcf2fac5eb7b"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E7%84%A1%E9%A1%8C%20f61ad5ce5341428da200dcf2fac5eb7b.html">無題</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2024年7月19日 23:22</time></td></tr><tr id="699c2705-a93e-4354-b13c-36718134b321"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%82%E5%A5%BD%E3%81%8D%20699c2705a93e4354b13c36718134b321.html">アニメも好き</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2023年11月3日 17:19</time></td></tr><tr id="87100945-28bc-47bd-9b2a-c5ba6e067f50"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E6%96%99%E7%90%86%E4%BD%9C%E3%82%8B%E3%81%AE%E5%A4%A7%E5%A5%BD%E3%81%8D%208710094528bc47bd9b2ac5ba6e067f50.html">料理作るの大好き</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2023年11月3日 17:18</time></td></tr><tr id="09a05ffa-49c6-40b4-8b26-eb71a7f793f7"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E8%B6%A3%E5%91%B3%2009a05ffa49c640b48b26eb71a7f793f7.html">趣味</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2023年11月3日 17:14</time></td></tr><tr id="88f79204-deb4-493f-97c9-f2d0ed22ae5e"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E3%83%9A%E3%83%BC%E3%82%B83%2088f79204deb4493f97c9f2d0ed22ae5e.html">ページ3</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2023年10月3日 14:39</time></td></tr><tr id="1b544f32-413c-4bfd-a38a-2453e865e021"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E7%84%A1%E9%A1%8C%201b544f32413c4bfda38a2453e865e021.html">無題</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2023年10月3日 14:39</time></td></tr><tr id="e5eafa99-049e-4a44-a15a-1eeb329a11b8"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E7%84%A1%E9%A1%8C%20e5eafa99049e4a44a15a1eeb329a11b8.html">無題</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2023年10月3日 14:39</time></td></tr><tr id="9c28bbb7-6619-41fe-b8df-899f3917ae41"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E7%BE%8E%E5%91%B3%E3%81%97%E3%81%84%E3%81%94%E3%81%AF%E3%82%93%E3%81%AA%E3%81%A9%E3%81%AA%E3%81%A9%209c28bbb7661941feb8df899f3917ae41.html">美味しいごはんなどなど</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2024年7月19日 23:22</time></td></tr><tr id="12c19e0b-cec3-8008-b62e-e4d30b2f2cb8"><td class="cell-title"><a href="%E6%B8%A5%E7%BE%8E%20%E7%9F%A5%E4%B9%85/%E7%84%A1%E9%A1%8C/%E7%84%A1%E9%A1%8C%2012c19e0bcec38008b62ee4d30b2f2cb8.html">無題</a></td><td class="cell-cB?^"></td><td class="cell-Tc&lt;D"><time>@2024年10月27日 14:45</time></td></tr></tbody></table><br/><br/></div></div><div style="display:contents" dir="auto"><p id="3c9e97c5-af85-4282-a66c-d941d40714a9" class="">
+</p></div><div style="display:contents" dir="auto"><p id="4c457ed6-86c7-4627-a259-ebabdcb8f72f" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="bc40a29c-e0a8-4d89-ab6b-d3b914f288da" style="width:12.5%" class="column"><div style="display:contents" dir="auto"><p id="d6901046-4c61-443c-891c-3df43a295968" class=""><strong>MBTI</strong></p></div><div style="display:contents" dir="auto"><p id="5a47860b-3a48-42b6-a052-27823f6c6268" class="block-color-teal_background">ENTJ</p></div><div style="display:contents" dir="auto"><p id="e043f985-60f7-4e73-8eff-8a4b67098f1b" class="block-color-default"><strong>Strength</strong></p></div><div style="display:contents" dir="auto"><p id="06f33d2f-48c4-495e-ac6b-60996bf5b32f" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253457/%E6%9C%80%E4%B8%8A%E5%BF%97%E5%90%91-%E8%B3%87%E8%B3%AA.aspx">最上志向</a></p></div><div style="display:contents" dir="auto"><p id="a8e99d94-8c0c-466d-907e-1727f7efc4e4" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253406/%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E8%B3%87%E8%B3%AA.aspx">ｺﾐｭﾆｹｰｼｮﾝ</a></p></div><div style="display:contents" dir="auto"><p id="115ecb7d-16fc-441f-a892-aeb52c143dab" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253394/分析思考-資質.aspx">分析思考</a></p></div><div style="display:contents" dir="auto"><p id="09981d8a-46a4-4e1b-9894-de8ed03ec088" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253400/%E4%BF%A1%E5%BF%B5-%E8%B3%87%E8%B3%AA.aspx">信念</a></p></div><div style="display:contents" dir="auto"><p id="23e525a4-a1e6-476c-842b-5e77f8d7d546" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253415/%E5%85%AC%E5%B9%B3%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">公平性</a></p></div><div style="display:contents" dir="auto"><p id="8ead9a00-a5d6-447a-8441-616d3ac181d6" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253388/%E6%B4%BB%E7%99%BA%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">活発性</a></p></div><div style="display:contents" dir="auto"><p id="d6d0b84e-4553-48da-aa26-e8de0281db8e" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253397/%E3%82%A2%E3%83%AC%E3%83%B3%E3%82%B8-%E8%B3%87%E8%B3%AA.aspx">アレンジ</a></p></div><div style="display:contents" dir="auto"><p id="6b379ff9-c2ef-4ca2-9f23-0efb42cfb475" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253475/%E8%87%AA%E6%88%91-%E8%B3%87%E8%B3%AA.aspx">自我</a></p></div><div style="display:contents" dir="auto"><p id="ca9ee942-1739-4a4b-82ab-6fb828d88aec" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253385/%E9%81%94%E6%88%90%E6%AC%B2-%E8%B3%87%E8%B3%AA.aspx">達成欲</a></p></div><div style="display:contents" dir="auto"><p id="e65eb27c-da11-408f-a644-956434511a59" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253427/%E8%A6%8F%E5%BE%8B%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">規律性</a></p></div><div style="display:contents" dir="auto"><p id="e0792888-ec68-41e4-8d81-9174d281d988" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253466/%E8%B2%AC%E4%BB%BB%E6%84%9F-%E8%B3%87%E8%B3%AA.aspx">責任感</a></p></div><div style="display:contents" dir="auto"><p id="60155fa3-171d-4bfe-bc23-3e7c40f67708" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253433/%E6%9C%AA%E6%9D%A5%E5%BF%97%E5%90%91-%E8%B3%87%E8%B3%AA.aspx">未来志向</a></p></div><div style="display:contents" dir="auto"><p id="d23324e4-ce1c-40cb-ad3a-b12f64bc9e34" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253391/%E9%81%A9%E5%BF%9C%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">適応性</a></p></div><div style="display:contents" dir="auto"><p id="c3c700c6-8d94-4624-a501-1fd91dac61ab" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253463/%E8%A6%AA%E5%AF%86%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">親密性</a></p></div><div style="display:contents" dir="auto"><p id="2be106dc-7eaf-486c-b510-d7fc995990d2" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253436/%E8%AA%BF%E5%92%8C%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">調和性</a></p></div><div style="display:contents" dir="auto"><p id="bd7ff2b8-95d1-483f-9dde-d853532d687c" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253058/%E5%85%B1%E6%84%9F%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">共感性</a></p></div><div style="display:contents" dir="auto"><p id="847bd349-9c05-4395-9f2b-3b39c18ed6b8" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253481/%E7%A4%BE%E4%BA%A4%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">社交性</a></p></div><div style="display:contents" dir="auto"><p id="71cc4a5f-026a-49f6-9183-84147623167b" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253409/%E7%AB%B6%E4%BA%89%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">競争性</a></p></div><div style="display:contents" dir="auto"><p id="013a7f12-dbf8-4592-ac8c-90982423fef0" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253430/%E7%9B%AE%E6%A8%99%E5%BF%97%E5%90%91-%E8%B3%87%E8%B3%AA.aspx">目標志向</a></p></div><div style="display:contents" dir="auto"><p id="a7285ba8-0f44-4338-b8ea-2b100a39fe91" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253472/%E8%87%AA%E5%B7%B1%E7%A2%BA%E4%BF%A1-%E8%B3%87%E8%B3%AA.aspx">自己確信</a></p></div><div style="display:contents" dir="auto"><p id="79f10a07-2ce2-45d6-bd64-4964421ce69f" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253421/%E6%85%8E%E9%87%8D%E3%81%95-%E8%B3%87%E8%B3%AA.aspx">慎重さ</a></p></div><div style="display:contents" dir="auto"><p id="277828f9-a776-4e25-8d14-a266cedd4887" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253454/%E5%AD%A6%E7%BF%92%E6%AC%B2-%E8%B3%87%E8%B3%AA.aspx">学習欲</a></p></div><div style="display:contents" dir="auto"><p id="13ab39d7-ca71-43f1-9d49-810e9dbccc9b" class="block-color-purple_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253469/%E5%9B%9E%E5%BE%A9%E5%BF%97%E5%90%91-%E8%B3%87%E8%B3%AA.aspx">回復志向</a></p></div><div style="display:contents" dir="auto"><p id="7134474e-421a-4932-a36e-2efd7c74e50e" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253445/%E5%80%8B%E5%88%A5%E5%8C%96-%E8%B3%87%E8%B3%AA.aspx">個別化</a></p></div><div style="display:contents" dir="auto"><p id="801e824a-4404-4acb-b7bd-44f246eecbfd" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253424/%E6%88%90%E9%95%B7%E4%BF%83%E9%80%B2-%E8%B3%87%E8%B3%AA.aspx">成長促進</a></p></div><div style="display:contents" dir="auto"><p id="8abffa48-9ea8-4d7c-acb3-1d5ff3f3bf06" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253439/%E7%9D%80%E6%83%B3-%E8%B3%87%E8%B3%AA.aspx">着想</a></p></div><div style="display:contents" dir="auto"><p id="2eb09768-10e4-4e10-a206-bc63d151a800" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253418/%E5%8E%9F%E7%82%B9%E6%80%9D%E8%80%83-%E8%B3%87%E8%B3%AA.aspx">原点思考</a></p></div><div style="display:contents" dir="auto"><p id="713bbca3-9e4e-4eef-b094-e54be2d7fc9f" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253478/%E6%88%A6%E7%95%A5%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">戦略性</a></p></div><div style="display:contents" dir="auto"><p id="278a6463-78cc-437d-b4f0-c480a4b588bd" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253412/%E9%81%8B%E5%91%BD%E6%80%9D%E8%80%83-%E8%B3%87%E8%B3%AA.aspx">運命思考</a></p></div><div style="display:contents" dir="auto"><p id="a741b981-a743-4104-80fe-141f07b1e40a" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253460/%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96-%E8%B3%87%E8%B3%AA.aspx">ﾎﾟｼﾞﾃｨﾌﾞ</a></p></div><div style="display:contents" dir="auto"><p id="538a058e-9a37-4d3f-96f2-53d66862e27d" class="block-color-blue_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253442/%E5%8C%85%E5%90%AB-%E8%B3%87%E8%B3%AA.aspx">包含</a></p></div><div style="display:contents" dir="auto"><p id="ba6a5730-e544-40e0-bdc7-c3e922c2d5f6" class="block-color-orange_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253403/%E6%8C%87%E4%BB%A4%E6%80%A7-%E8%B3%87%E8%B3%AA.aspx">指令性</a></p></div><div style="display:contents" dir="auto"><p id="8970821b-d332-486f-b35b-822eebfa3275" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253448/%E5%8F%8E%E9%9B%86%E5%BF%83-%E8%B3%87%E8%B3%AA.aspx">収集心</a></p></div><div style="display:contents" dir="auto"><p id="4c5ebc6b-cab8-44b7-ab30-130d40226a9e" class="block-color-teal_background"><a href="https://www.gallup.com/cliftonstrengths/ja/253451/%E5%86%85%E7%9C%81-%E8%B3%87%E8%B3%AA.aspx">内省</a></p></div><div style="display:contents" dir="auto"><p id="18f19e0b-cec3-804f-900e-c3fbd0d604c5" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="acfddab1-886f-4bdf-92da-18bcf8102436"/></div><div style="display:contents" dir="auto"><p id="644ba4ab-040f-4d05-8b34-dd620e46b56b" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
