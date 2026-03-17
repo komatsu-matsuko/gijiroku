@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bremen株式会社 — 役員体制図（仮）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0b;
+      --surface: #141413;
+      --surface-2: #1c1c1a;
+      --border: rgba(255,255,255,0.08);
+      --text: #ede8df;
+      --text-dim: rgba(237,232,223,0.45);
+      --text-mid: rgba(237,232,223,0.72);
+      --ceo: #c9a060;
+      --ceo-dim: rgba(201,160,96,0.12);
+      --ceo-border: rgba(201,160,96,0.35);
+      --hama: #8fb2c7;
+      --hama-dim: rgba(143,178,199,0.10);
+      --hama-border: rgba(143,178,199,0.35);
+      --sasa: #9ab787;
+      --sasa-dim: rgba(154,183,135,0.11);
+      --sasa-border: rgba(154,183,135,0.35);
+      --accent: #c9a060;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100vw - 40px)); margin: 0 auto; }
+    .label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.3;
+      letter-spacing: 0.04em;
+    }
+    .section-copy {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      max-width: 760px;
+      margin-top: 1rem;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(12,12,11,0.72);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      gap: 1.25rem;
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      color: var(--text-mid);
+      font-size: 0.85rem;
+    }
+
+    #hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 0 4rem;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(201,160,96,0.18), transparent 35%),
+        radial-gradient(circle at 85% 25%, rgba(143,178,199,0.15), transparent 30%),
+        radial-gradient(circle at 60% 85%, rgba(154,183,135,0.12), transparent 30%);
+      pointer-events: none;
+    }
+    .hero-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+    .hero-content { position: relative; max-width: 860px; }
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2.4rem, 6vw, 4.9rem);
+      line-height: 1.22;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      margin-top: 1rem;
+    }
+    .hero-title em {
+      color: var(--accent);
+      font-style: normal;
+      text-shadow: 0 0 24px rgba(201,160,96,0.15);
+    }
+    .hero-copy {
+      max-width: 760px;
+      margin-top: 1.5rem;
+      color: var(--text-mid);
+      font-size: 0.98rem;
+    }
+    .hero-note {
+      margin-top: 1.5rem;
+      display: inline-flex;
+      gap: 0.6rem;
+      align-items: center;
+      padding: 0.7rem 0.95rem;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.82rem;
+      color: var(--text-mid);
+    }
+
+    section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-intro {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    .section-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 5.5rem;
+      line-height: 0.9;
+      color: rgba(255,255,255,0.05);
+    }
+
+    .flow-shell {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    .org-top {
+      display: grid;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .connector {
+      width: 2px;
+      height: 38px;
+      background: linear-gradient(180deg, rgba(201,160,96,0.55), rgba(255,255,255,0.08));
+      margin: 0 auto;
+    }
+    .connector-horizontal {
+      height: 2px;
+      width: min(680px, 80%);
+      margin: 0 auto 1.2rem;
+      background: linear-gradient(90deg, rgba(143,178,199,0.35), rgba(201,160,96,0.25), rgba(154,183,135,0.35));
+    }
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .org-card {
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      min-height: 100%;
+    }
+    .org-card.ceo {
+      border-color: var(--ceo-border);
+      background: linear-gradient(180deg, var(--ceo-dim), rgba(255,255,255,0.02));
+      max-width: 380px;
+    }
+    .org-card.hama {
+      border-color: var(--hama-border);
+      background: linear-gradient(180deg, var(--hama-dim), rgba(255,255,255,0.02));
+    }
+    .org-card.sasa {
+      border-color: var(--sasa-border);
+      background: linear-gradient(180deg, var(--sasa-dim), rgba(255,255,255,0.02));
+    }
+    .card-role {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .card-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.55rem;
+      font-weight: 300;
+      margin-top: 0.35rem;
+    }
+    .card-sub {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      margin-top: 0.4rem;
+    }
+    .card-points {
+      list-style: none;
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+    .card-points li {
+      padding-left: 1rem;
+      position: relative;
+    }
+    .card-points li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 0.8em;
+      transform: translateY(-50%);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .compare-card {
+      padding: 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .compare-card.hama { border-left: 2px solid var(--hama); }
+    .compare-card.sasa { border-left: 2px solid var(--sasa); }
+    .compare-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+    .compare-copy {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .bucket {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .bucket-title {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .bucket ul {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+    .bucket li {
+      padding-left: 1rem;
+      position: relative;
+    }
+    .bucket li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .matrix {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .matrix-row:first-child { border-top: 0; }
+    .matrix-head, .matrix-cell {
+      padding: 1rem 1rem 1rem 1.1rem;
+    }
+    .matrix-head {
+      background: rgba(255,255,255,0.02);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .matrix-cell {
+      border-left: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .matrix-top {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .note-card {
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+    .note-card strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 900px) {
+      .org-grid, .compare-grid, .note-grid { grid-template-columns: 1fr; }
+      .matrix-row { grid-template-columns: 1fr; }
+      .matrix-cell { border-left: 0; border-top: 1px solid var(--border); }
+      .section-intro { grid-template-columns: 1fr; }
+      .section-number { font-size: 4rem; }
+    }
+    @media (max-width: 680px) {
+      nav .nav-links { display: none; }
+      .flow-shell { padding: 1.25rem; }
+      #hero { min-height: auto; padding: 5rem 0 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav-brand">Bremen 役員体制図（仮）</div>
+      <ul class="nav-links">
+        <li><a href="#org-map">体制図</a></li>
+        <li><a href="#roles">役割整理</a></li>
+        <li><a href="#line">判断ライン</a></li>
+        <li><a href="#notes">仮置きメモ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="label">Bremen株式会社 — Executive Draft</div>
+        <h1 class="hero-title">役員の役割を、<br><em>責任・判断・守備範囲</em>で<br>見える化する。</h1>
+        <div class="hero-copy">
+          <p>このページは、`company_manual.html` のトンマナに寄せて作った<strong>役員体制図の仮版</strong>です。2025-03-10 幹部MTGと 2025-03-11 評価MTGの内容をもとに、社長・濱村・笹川の役割を「今の実態に近い形」で整理しています。</p>
+        </div>
+        <div class="hero-note">Draft / 仮置き版。今日のMTGで調整して確定させる前提。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="org-map">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-number">01</div>
+        <div>
+          <div class="label">Section 01</div>
+          <h2 class="section-title">役員体制図（仮）</h2>
+          <p class="section-copy">上から順に「最終判断」「対外・全体交通整理」「営業・現場実装」の責任を持つ構造として整理。人格の上下ではなく、責任範囲の上下で線を引く。</p>
+        </div>
+      </div>
+
+      <div class="flow-shell">
+        <div class="org-top">
+          <div class="org-card ceo">
+            <div class="card-role">CEO / 社長</div>
+            <div class="card-name">油谷 憲人</div>
+            <div class="card-sub">方向・配置・資源配分・基準を決め、最後に判断し、最後に責任を取る</div>
+            <ul class="card-points">
+              <li>勝つ領域・やらない領域・優先順位を決める</li>
+              <li>人と席を決め、原資を守り、重い判断を引き受ける</li>
+              <li>役員に任せる範囲と、社長確認が必要な範囲を定める</li>
+            </ul>
+          </div>
+        </div>
+        <div class="connector"></div>
+        <div class="connector-horizontal"></div>
+        <div class="org-grid">
+          <div class="org-card hama">
+            <div class="card-role">Executive / 外交部長</div>
+            <div class="card-name">濱村 圭一</div>
+            <div class="card-sub">社外接点と全体交通整理を担い、方針を運用・調整・仕組みに変える</div>
+            <ul class="card-points">
+              <li>代理店・初開催店舗・ポスティング運用などの対外調整</li>
+              <li>本社賞与案・幹部賞与・歩合通知など、制度運用の整理</li>
+              <li>起動責任、タスク交通整理、ダッシュボード整備、任せ先の振り分け</li>
+            </ul>
+          </div>
+
+          <div class="org-card sasa">
+            <div class="card-role">Executive / 営業部長</div>
+            <div class="card-name">笹川</div>
+            <div class="card-sub">営業・テナント・査定教育を担い、数字と再現性を現場で形にする</div>
+            <ul class="card-points">
+              <li>営業・テナント運営の整理と、現場判断の主導</li>
+              <li>買取査定・価格設計・営業教育の整備と実践展開</li>
+              <li>教育者育成、研修運用、KPI連動の実行管理</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roles">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-number">02</div>
+        <div>
+          <div class="label">Section 02</div>
+          <h2 class="section-title">役割整理（仮）</h2>
+          <p class="section-copy">「肩書き」だけでなく、何を持ち、何を見るか、何を自分で進めるかまで落とした叩き台。今日の会議では、この粒度でズレを潰すのが目的。</p>
+        </div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card hama">
+          <div class="compare-title">濱村 圭一 / 外交部長</div>
+          <div class="compare-copy">外との接点を整えながら、社長の方針を「止まらない運用」に変える役。対外調整だけでなく、社内の交通整理と制度運用の橋渡しも担う。</div>
+
+          <div class="bucket">
+            <div class="bucket-title">主な担当</div>
+            <ul>
+              <li>代理店・初開催店舗・ポスティング会社との運用調整</li>
+              <li>本社賞与・幹部賞与・歩合変更などの制度運用整理</li>
+              <li>兼次の雇用契約、入社準備、管理権限移譲などの条件調整</li>
+              <li>起動責任、タスクの交通整理、ダッシュボード整備</li>
+            </ul>
+          </div>
+
+          <div class="bucket">
+            <div class="bucket-title">見るべき状態</div>
+            <ul>
+              <li>外部調整が止まっていないか</li>
+              <li>制度・条件変更が現場で詰まっていないか</li>
+              <li>誰が何を持つかが曖昧なまま放置されていないか</li>
+            </ul>
+          </div>
+
+          <div class="bucket">
+            <div class="bucket-title">仕事の本質</div>
+            <ul>
+              <li>社長の方針を、対外運用と社内交通整理に変える</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="compare-card sasa">
+          <div class="compare-title">笹川 / 営業部長</div>
+          <div class="compare-copy">営業現場・テナント・教育の責任者。売上や利益だけでなく、査定・営業・教育が再現性を持って回る状態を作る役。</div>
+
+          <div class="bucket">
+            <div class="bucket-title">主な担当</div>
+            <ul>
+              <li>営業・テナントの役割整理と現場判断の主導</li>
+              <li>買取査定資料、価格設計、営業教育の整備と展開</li>
+              <li>教育マネージャー・現場人材への実践落とし込み</li>
+              <li>椿の研修、車選定の確認、現場投入準備</li>
+            </ul>
+          </div>
+
+          <div class="bucket">
+            <div class="bucket-title">見るべき状態</div>
+            <ul>
+              <li>営業・テナントの数字が見えているか</li>
+              <li>教育が属人化せず、再現できるか</li>
+              <li>新メンバーが立ち上がる仕組みになっているか</li>
+            </ul>
+          </div>
+
+          <div class="bucket">
+            <div class="bucket-title">仕事の本質</div>
+            <ul>
+              <li>社長の方針を、営業成果と教育再現性に変える</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="line">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-number">03</div>
+        <div>
+          <div class="label">Section 03</div>
+          <h2 class="section-title">判断ライン（仮）</h2>
+          <p class="section-copy">現場を止めないために、「基本任せる」「社長確認が必要」の線を暫定で見える化。細部は今日のMTGで詰める。</p>
+        </div>
+      </div>
+
+      <div class="matrix">
+        <div class="matrix-row">
+          <div class="matrix-head matrix-top">判断テーマ</div>
+          <div class="matrix-head matrix-top">濱村 / 外交部長</div>
+          <div class="matrix-head matrix-top">笹川 / 営業部長</div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-head">基本任せる範囲</div>
+          <div class="matrix-cell">代理店・ポスティング・初開催店舗との通常調整、社内タスク交通整理、運用開始の段取り</div>
+          <div class="matrix-cell">営業・テナント運用、教育進行、研修実施、週次確認済み範囲での現場判断</div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-head">社長確認が必要</div>
+          <div class="matrix-cell">報酬・賞与の最終確定、大きい条件変更、役割の再定義、重要契約や大きな支出</div>
+          <div class="matrix-cell">人件費を伴う変更、大きな投資、配置転換、制度変更、営業方針の大幅変更</div>
+        </div>
+        <div class="matrix-row">
+          <div class="matrix-head">持つべき視点</div>
+          <div class="matrix-cell">「止まらない運用になっているか」「外部との関係が壊れていないか」</div>
+          <div class="matrix-cell">「数字と教育が再現しているか」「現場が属人化していないか」</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="container">
+      <div class="section-intro">
+        <div class="section-number">04</div>
+        <div>
+          <div class="label">Section 04</div>
+          <h2 class="section-title">今日のMTGで詰めるポイント</h2>
+          <p class="section-copy">この図は仮置き。今日の会議では、役員本人たちの認識とズレている部分を詰め、役割と判断ラインを確定させる。</p>
+        </div>
+      </div>
+
+      <div class="note-grid">
+        <div class="note-card">
+          <strong>1. 肩書きと守備範囲</strong>
+          濱村＝外交部長、笹川＝営業部長で確定するか。そのうえで、今やっている実務とズレていないかを確認する。
+        </div>
+        <div class="note-card">
+          <strong>2. 任せる線</strong>
+          「ここまでは任せる」「ここからは社長確認」の線を曖昧にしない。止まる原因は、役割不足より線引き不足にある。
+        </div>
+        <div class="note-card">
+          <strong>3. 数字と責任の接続</strong>
+          笹川はKPIと接続、濱村は停滞解消と運用推進の責任を明文化し、ただの肩書きで終わらせない。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Bremen株式会社 — 役員体制図（仮） / based on recent MTG transcripts
+  </footer>
+</body>
+</html>
