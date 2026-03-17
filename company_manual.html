@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bremen株式会社 — 組織規範マニュアル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0c0b;
+    --surface: #141413;
+    --surface-2: #1c1c1a;
+    --border: rgba(255,255,255,0.07);
+    --text: #ede8df;
+    --text-dim: rgba(237,232,223,0.45);
+    --text-mid: rgba(237,232,223,0.7);
+    --ceo: #c9a060;
+    --ceo-dim: rgba(201,160,96,0.12);
+    --ceo-border: rgba(201,160,96,0.3);
+    --exec: #7aacbe;
+    --exec-dim: rgba(122,172,190,0.1);
+    --exec-border: rgba(122,172,190,0.3);
+    --staff: #96b896;
+    --staff-dim: rgba(150,184,150,0.1);
+    --staff-border: rgba(150,184,150,0.3);
+    --do: #7ab87a;
+    --dont: #c27070;
+    --accent: #c9a060;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ─── SCROLL ANIMATION ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ─── TYPOGRAPHY ─── */
+  .label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+  }
+  .section-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 11rem;
+    font-weight: 400;
+    line-height: 1;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    right: -1rem;
+    top: -3rem;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 2.5rem; }
+  section { padding: 7rem 0; border-top: 1px solid var(--border); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(12,12,11,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,160,96,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(122,172,190,0.03) 0%, transparent 70%);
+  }
+  .hero-line {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(201,160,96,0.2) 30%, rgba(201,160,96,0.1) 70%, transparent);
+    opacity: 0.4;
+  }
+  .hero-content { position: relative; max-width: 780px; }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    opacity: 0;
+    animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-premise {
+    margin-top: 3rem;
+    padding: 2rem 2.5rem;
+    border-left: 2px solid var(--accent);
+    background: rgba(201,160,96,0.04);
+    opacity: 0;
+    animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
+  }
+  .hero-premise p {
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--text-mid);
+  }
+  .hero-premise p + p { margin-top: 0.75rem; }
+  .hero-premise strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .hero-scroll {
+    margin-top: 4rem;
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.8s forwards;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── ORG CHART ─── */
+  #org { position: relative; }
+  .org-visual {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .org-tier {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+  .org-connector {
+    width: 1px;
+    height: 3rem;
+    background: linear-gradient(to bottom, var(--ceo), var(--exec));
+    margin: 0 auto;
+    position: relative;
+  }
+  .org-connector::after {
+    content: '↓';
+    position: absolute;
+    bottom: -0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+  }
+  .org-connector-2 {
+    background: linear-gradient(to bottom, var(--exec), var(--staff));
+  }
+  .org-card {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .org-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .org-card.ceo {
+    border-color: var(--ceo-border);
+    background: var(--ceo-dim);
+  }
+  .org-card.ceo::before { background: var(--ceo); }
+  .org-card.exec {
+    border-color: var(--exec-border);
+    background: var(--exec-dim);
+  }
+  .org-card.exec::before { background: var(--exec); }
+  .org-card.staff {
+    border-color: var(--staff-border);
+    background: var(--staff-dim);
+  }
+  .org-card.staff::before { background: var(--staff); }
+  .org-card-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .org-card.ceo .org-card-label { color: var(--ceo); }
+  .org-card.exec .org-card-label { color: var(--exec); }
+  .org-card.staff .org-card-label { color: var(--staff); }
+  .org-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .org-card-essence {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .org-card-meta {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .org-meta-item { font-size: 0.75rem; color: var(--text-mid); }
+  .org-meta-key {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  /* Flow arrows */
+  .org-flow {
+    margin: 4rem 0;
+    padding: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .org-flow-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+  }
+  .flow-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 120px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .flow-step-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+  .flow-step-text {
+    font-size: 0.75rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-top: 0.25rem;
+  }
+  .flow-arrow {
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    padding: 0 0.25rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── ROLE SECTIONS ─── */
+  .role-section {
+    padding: 7rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .role-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  .role-badge {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+  .role-badge.ceo { border-color: var(--ceo); color: var(--ceo); }
+  .role-badge.exec { border-color: var(--exec); color: var(--exec); }
+  .role-badge.staff { border-color: var(--staff); color: var(--staff); }
+  .role-title-block { flex: 1; }
+  .role-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+  }
+  .role-title.ceo { color: var(--ceo); }
+  .role-title.exec { color: var(--exec); }
+  .role-title.staff { color: var(--staff); }
+  .role-summary {
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    max-width: 520px;
+    line-height: 1.9;
+    border-left: 1px solid var(--border);
+    padding-left: 1.5rem;
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .mission-item {
+    padding: 1.75rem 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 2px solid;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .mission-item:hover { background: var(--surface-2); transform: translateX(4px); }
+  .mission-item.ceo { border-left-color: var(--ceo); }
+  .mission-item.exec { border-left-color: var(--exec); }
+  .mission-item.staff { border-left-color: var(--staff); }
+  .mission-num {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1;
+    color: rgba(255,255,255,0.06);
+    margin-bottom: 0.75rem;
+  }
+  .mission-heading {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .mission-body {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+  }
+
+  /* DO / DON'T */
+  .do-dont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .list-box {
+    padding: 2rem;
+    border: 1px solid;
+  }
+  .list-box.do-box {
+    border-color: rgba(122,184,122,0.2);
+    background: rgba(122,184,122,0.03);
+  }
+  .list-box.dont-box {
+    border-color: rgba(194,112,112,0.2);
+    background: rgba(194,112,112,0.03);
+  }
+  .list-box-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .list-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+  .list-icon.do { background: rgba(122,184,122,0.15); color: var(--do); }
+  .list-icon.dont { background: rgba(194,112,112,0.15); color: var(--dont); }
+  .list-box-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .do-box .list-box-title { color: var(--do); }
+  .dont-box .list-box-title { color: var(--dont); }
+  .do-dont-list { list-style: none; }
+  .do-dont-list li {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    padding: 0.5rem 0;
+    padding-left: 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+    line-height: 1.7;
+  }
+  .do-dont-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+  .do-box .do-dont-list li::before { background: var(--do); }
+  .dont-box .do-dont-list li::before { background: var(--dont); }
+  .do-dont-list li:last-child { border-bottom: none; }
+
+  /* ─── COMMON RULES ─── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .rule-card {
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .rule-card:hover { background: var(--surface-2); }
+  .rule-card-num {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 3rem;
+    color: rgba(201,160,96,0.12);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .rule-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+  }
+  .rule-card-body {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+  }
+
+  /* ─── EVALUATION COMPARISON ─── */
+  .eval-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .eval-col-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1px;
+  }
+  .eval-col-header.pos { background: rgba(122,184,122,0.08); border: 1px solid rgba(122,184,122,0.2); }
+  .eval-col-header.neg { background: rgba(194,112,112,0.08); border: 1px solid rgba(194,112,112,0.2); }
+  .eval-col-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .eval-col-icon.pos { background: rgba(122,184,122,0.15); color: var(--do); }
+  .eval-col-icon.neg { background: rgba(194,112,112,0.15); color: var(--dont); }
+  .eval-col-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .eval-col-title.pos { color: var(--do); }
+  .eval-col-title.neg { color: var(--dont); }
+  .eval-items { display: flex; flex-direction: column; gap: 1px; }
+  .eval-item {
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    line-height: 1.6;
+    transition: background 0.2s;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .eval-item::before {
+    content: '';
+    position: absolute;
+    left: 1.25rem;
+    top: 1.1rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .eval-item.pos::before { background: var(--do); }
+  .eval-item.neg::before { background: var(--dont); }
+  .eval-item:hover { background: var(--surface-2); }
+
+  /* ─── FLOWCHART (CONSULTATION) ─── */
+  .flowchart-wrap {
+    margin-top: 3rem;
+    padding: 3rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .flow-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+  }
+  .fc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .fc-row {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+  .fc-node {
+    padding: 0.9rem 1.5rem;
+    border: 1px solid;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  .fc-node.start {
+    border-color: var(--accent);
+    background: var(--ceo-dim);
+    color: var(--text);
+    flex: 1;
+  }
+  .fc-node.question {
+    border-color: rgba(122,172,190,0.35);
+    background: var(--exec-dim);
+    color: var(--text);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .fc-node.question::before {
+    content: '?';
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--exec);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .fc-node.action-good {
+    border-color: rgba(122,184,122,0.3);
+    background: rgba(122,184,122,0.05);
+    color: var(--text);
+    flex: 1;
+    padding-left: 2rem;
+  }
+  .fc-node.action-good::before {
+    content: '→';
+    position: absolute;
+    left: 0.7rem;
+    color: var(--do);
+    font-weight: 600;
+  }
+  .fc-node.action-bad {
+    border-color: rgba(194,112,112,0.3);
+    background: rgba(194,112,112,0.05);
+    color: var(--dont);
+    flex: 1;
+    text-decoration: line-through;
+    text-decoration-color: rgba(194,112,112,0.4);
+    opacity: 0.7;
+  }
+  .fc-node.result {
+    border-color: rgba(201,160,96,0.3);
+    background: var(--ceo-dim);
+    color: var(--text);
+    flex: 1;
+    text-align: center;
+  }
+  .fc-connector-v {
+    width: 1px;
+    min-height: 1.5rem;
+    background: var(--border);
+    margin-left: 2rem;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .fc-connector-v::after {
+    content: '↓';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+  }
+  .fc-branch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+  .fc-branch-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .fc-branch-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0.4rem 0;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .fc-spacer { height: 1.5rem; }
+  .fc-divider { 
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 1rem 0;
+  }
+
+  /* ─── SUMMARY SECTION ─── */
+  #summary {
+    padding: 8rem 0;
+  }
+  .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .summary-card {
+    padding: 2.5rem;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-card.ceo { border-color: var(--ceo-border); }
+  .summary-card.exec { border-color: var(--exec-border); }
+  .summary-card.staff { border-color: var(--staff-border); }
+  .summary-card-bg {
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 5rem;
+    opacity: 0.04;
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+  }
+  .summary-role {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .summary-card.ceo .summary-role { color: var(--ceo); }
+  .summary-card.exec .summary-role { color: var(--exec); }
+  .summary-card.staff .summary-role { color: var(--staff); }
+  .summary-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 2.1;
+    color: var(--text-mid);
+  }
+
+  .final-statement {
+    margin-top: 5rem;
+    padding: 3rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-align: center;
+  }
+  .final-statement p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.9rem;
+    line-height: 2.2;
+    color: var(--text-mid);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .final-statement strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .label { font-size: 10px; }
+
+  /* ─── SECTION INTRO ─── */
+  .section-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+  .section-intro-line {
+    width: 1px;
+    min-height: 60px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+  }
+
+  /* ─── ROLE TABLE ─── */
+  .role-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3rem;
+    font-size: 0.78rem;
+  }
+  .role-table th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .role-table th:nth-child(2) { color: var(--ceo); }
+  .role-table th:nth-child(3) { color: var(--exec); }
+  .role-table th:nth-child(4) { color: var(--staff); }
+  .role-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  .role-table td:first-child {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    white-space: nowrap;
+    background: var(--surface);
+  }
+  .role-table tr:hover td { background: var(--surface-2); }
+  .role-table tr:hover td:first-child { background: var(--surface-2); }
+
+  /* ─── TALK RULES ─── */
+  .talk-rules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .talk-rule-item {
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .container { padding: 0 1.5rem; }
+    .mission-grid, .do-dont-grid, .eval-grid, .summary-cards, .rules-grid { grid-template-columns: 1fr; }
+    .role-table { display: block; overflow-x: auto; }
+    nav .nav-links { display: none; }
+    .talk-rules { grid-template-columns: 1fr; }
+  }
+
+  /* Divider decoration */
+  .deco-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .deco-divider::before, .deco-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .deco-divider span {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--accent);
+    opacity: 0.4;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Bremen 組織規範</div>
+  <ul class="nav-links">
+    <li><a href="#org">組織構造</a></li>
+    <li><a href="#ceo-section">社長</a></li>
+    <li><a href="#exec-section">役員</a></li>
+    <li><a href="#staff-section">社員</a></li>
+    <li><a href="#common">共通規範</a></li>
+    <li><a href="#mental">メンタル管理</a></li>
+    <li><a href="#eval">評価基準</a></li>
+    <li><a href="#consult">相談ルール</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="label">Bremen株式会社 — 組織規範マニュアル</span>
+      </div>
+      <h1 class="hero-title">
+        上下は、人格の<br>上下ではなく、<br><em>責任範囲の上下</em>である。
+      </h1>
+      <div class="hero-premise">
+        <p>上に立つ者ほど、広い範囲に責任を負い、重い判断をし、失敗時により大きな責任を引き受ける。</p>
+        <p><strong>社長</strong>は方向・配置・資源配分・基準を決める最終責任者。<strong>役員</strong>はその方向の中で結果を出し組織を動かす。<strong>社員</strong>は任された役割を高水準で遂行する。</p>
+        <p>会社は友達同士の集まりではない。<strong>礼節・序列・責任の線引き</strong>があって初めて、組織は安定して成果を出せる。</p>
+      </div>
+      <div class="hero-scroll">
+        <span class="label">Scroll</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORG STRUCTURE -->
+<section id="org">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="section-intro-line"></div>
+      <div>
+        <div class="label" style="margin-bottom:0.75rem;">Section 01</div>
+        <h2 class="section-title">組織構造と<br>責任の流れ</h2>
+      </div>
+    </div>
+
+    <!-- 3 tiers -->
+    <div class="org-visual">
+      <div class="org-tier reveal">
+        <div class="org-card ceo">
+          <div class="org-card-label">CEO / 社長</div>
+          <div class="org-card-title">社長</div>
+          <div class="org-card-essence">方向・配置・原資・文化を決め、最後に判断し、最後に責任を取る</div>
+          <div class="org-card-meta">
+            <div class="org-meta-item"><span class="org-meta-key">見る範囲</span>全社・未来・資源配分</div>
+            <div class="org-meta-item"><span class="org-meta-key">成果基準</span>全社成長・利益・存続・文化形成</div>
+            <div class="org-meta-item"><span class="org-meta-key">仕事の本質</span>勝てる構造を作る</div>
+            <div class="org-meta-item"><span class="org-meta-key">失敗時</span>最終責任を引き受け、再配置・再判断</div>
+          </div>
+        </div>
+      </div>
+      <div class="org-connector reveal"></div>
+      <div class="org-tier reveal reveal-delay-1">
+        <div class="org-card exec">
+          <div class="org-card-label">Executive / 役員</div>
+          <div class="org-card-title">役員</div>
+          <div class="org-card-essence">社長が定めた方向を実行に変え、数字を持ち、組織を育て、全社視点で社長を支える</div>
+          <div class="org-card-meta">
+            <div class="org-meta-item"><span class="org-meta-key">見る範囲</span>部門・横断課題・全社最適</div>
+            <div class="org-meta-item"><span class="org-meta-key">成果基準</span>数字達成・再現性・実行・育成</div>
+            <div class="org-meta-item"><span class="org-meta-key">仕事の本質</span>方針を実行に変える</div>
+            <div class="org-meta-item"><span class="org-meta-key">失敗時</span>他責にせず、原因と打ち手を示し収束</div>
+          </div>
+        </div>
+      </div>
+      <div class="org-connector org-connector-2 reveal"></div>
+      <div class="org-tier reveal reveal-delay-2">
+        <div class="org-card staff">
+          <div class="org-card-label">Staff / 社員</div>
+          <div class="org-card-title">社員</div>
+          <div class="org-card-essence">任された役割を高水準で遂行し、報連相と改善によって組織成果に貢献する</div>
+          <div class="org-card-meta">
+            <div class="org-meta-item"><span class="org-meta-key">見る範囲</span>自担当・チーム</div>
+            <div class="org-meta-item"><span class="org-meta-key">成果基準</span>品質・速度・再現性・改善</div>
+            <div class="org-meta-item"><span class="org-meta-key">仕事の本質</span>決められた役割をやり切る</div>
+            <div class="org-meta-item"><span class="org-meta-key">失敗時</span>隠さず報告し、修正して次に活かす</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow -->
+    <div class="org-flow reveal">
+      <div class="org-flow-title">Responsibility Flow — 責任の流れ</div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">01</div>
+          <div class="flow-step-text">社長が<br>方向と配置を決める</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">02</div>
+          <div class="flow-step-text">役員が方針を<br>計画・実行・管理に落とす</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">03</div>
+          <div class="flow-step-text">社員が現場で<br>高い精度で遂行する</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">04</div>
+          <div class="flow-step-text">現場の事実が<br>上に報告される</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">05</div>
+          <div class="flow-step-text">社長が<br>再判断・再配置を行う</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <table class="role-table reveal">
+      <thead>
+        <tr>
+          <th></th>
+          <th>社長</th>
+          <th>役員</th>
+          <th>社員</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>主な責任</td>
+          <td>会社全体の最終責任</td>
+          <td>担当領域の結果責任</td>
+          <td>任された業務の遂行責任</td>
+        </tr>
+        <tr>
+          <td>仕事の本質</td>
+          <td>勝てる構造を作る</td>
+          <td>方針を実行に変える</td>
+          <td>決められた役割をやり切る</td>
+        </tr>
+        <tr>
+          <td>見る範囲</td>
+          <td>全社・未来・資源配分</td>
+          <td>部門・横断課題・全社最適</td>
+          <td>自担当・チーム</td>
+        </tr>
+        <tr>
+          <td>成果基準</td>
+          <td>全社成長、利益、存続、文化形成</td>
+          <td>数字達成、再現性、実行、育成</td>
+          <td>品質、速度、再現性、改善</td>
+        </tr>
+        <tr>
+          <td>失敗時の基本姿勢</td>
+          <td>最終責任を引き受け再判断</td>
+          <td>他責にせず原因と打ち手を示す</td>
+          <td>隠さず報告し修正して活かす</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CEO SECTION -->
+<section id="ceo-section" class="role-section">
+  <div class="container">
+    <div class="role-header reveal">
+      <div class="role-badge ceo">社長</div>
+      <div class="role-title-block">
+        <div class="label" style="margin-bottom:0.5rem; color: var(--ceo); opacity:0.7;">Section 02 — CEO</div>
+        <h2 class="role-title ceo">社長の使命と規律</h2>
+        <p class="role-summary">社長は、方向・配置・原資・文化を決め、最後に判断し、最後に責任を取る人である。会社の最終責任者として、正解のない問いに答えを出し続ける。</p>
+      </div>
+    </div>
+
+    <div class="label" style="margin-bottom: 1.5rem;" >— 社長の使命（求められること）</div>
+    <div class="mission-grid">
+      <div class="mission-item ceo reveal reveal-delay-1">
+        <div class="mission-num">01</div>
+        <div class="mission-heading">方向を決める</div>
+        <div class="mission-body">会社がどこで勝つのか、何を伸ばすのか、何をやらないのかを決める。方針・優先順位・判断基準を明確にし、思いつきではなく勝ち筋として言語化する。</div>
+      </div>
+      <div class="mission-item ceo reveal reveal-delay-2">
+        <div class="mission-num">02</div>
+        <div class="mission-heading">人と席を決める</div>
+        <div class="mission-body">誰をどこに配置するかを決める。役員・管理職・現場の役割期待を明確にし、情ではなく適性と責任で配置する。</div>
+      </div>
+      <div class="mission-item ceo reveal reveal-delay-1">
+        <div class="mission-num">03</div>
+        <div class="mission-heading">原資を守り、資源配分する</div>
+        <div class="mission-body">売上だけでなく、粗利・利益・キャッシュ・再現性を見る。低採算・伸びない・不安定な領域を惰性で温存しない。</div>
+      </div>
+      <div class="mission-item ceo reveal reveal-delay-2">
+        <div class="mission-num">04</div>
+        <div class="mission-heading">基準と文化を作る</div>
+        <div class="mission-body">何が評価され、何がNGかを明確にする。礼節、報連相、期限意識、数字責任、上下関係の線引きを定める。会社を友達ノリや感情運営にしない。</div>
+      </div>
+      <div class="mission-item ceo reveal reveal-delay-1">
+        <div class="mission-num">05</div>
+        <div class="mission-heading">最終判断と最終責任を担う</div>
+        <div class="mission-body">正解のない問いに、最後に答えを出す。投資・撤退・配置転換などの重い判断から逃げない。失敗時には、まず自分の判断責任を点検する。</div>
+      </div>
+      <div class="mission-item ceo reveal reveal-delay-2">
+        <div class="mission-num">06</div>
+        <div class="mission-heading">幹部を育て、組織を自走させる</div>
+        <div class="mission-body">役員を経営人材として育てる。任せる範囲・壁打ちで良い範囲・決裁が必要な範囲を明確にする。社長しか回せない構造を減らす。</div>
+      </div>
+      <div class="mission-item ceo reveal" style="grid-column: 1 / -1;">
+        <div class="mission-num">07</div>
+        <div class="mission-heading">会社を守る</div>
+        <div class="mission-body">外部信用、法務、労務、財務、ハラスメント、情報管理の最終責任を持つ。危機時には前に立ち、収束の責任を引き受ける。</div>
+      </div>
+    </div>
+
+    <div class="deco-divider"><span>×</span></div>
+
+    <div class="do-dont-grid">
+      <div class="list-box do-box reveal">
+        <div class="list-box-header">
+          <div class="list-icon do">✓</div>
+          <div class="list-box-title">社長がやること</div>
+        </div>
+        <ul class="do-dont-list">
+          <li>方針・優先順位・判断基準を言語化する</li>
+          <li>配置を情ではなく適性と責任で決める</li>
+          <li>粗利・利益・キャッシュを常に把握する</li>
+          <li>評価基準とNGを明確に定める</li>
+          <li>重い判断から逃げず最後に答えを出す</li>
+          <li>役員を経営人材として育てる</li>
+          <li>危機時には前に立ち責任を引き受ける</li>
+          <li>失敗時には自分の判断責任を先に点検する</li>
+        </ul>
+      </div>
+      <div class="list-box dont-box reveal reveal-delay-2">
+        <div class="list-box-header">
+          <div class="list-icon dont">✕</div>
+          <div class="list-box-title">社長がやってはいけないこと</div>
+        </div>
+        <ul class="do-dont-list">
+          <li>友達感覚や情だけで役員を置く</li>
+          <li>任せたのに毎回ひっくり返す</li>
+          <li>役員を飛ばして現場に細かく介入し続ける</li>
+          <li>責任だけ下に押しつける</li>
+          <li>機嫌や不機嫌で会社を運営する</li>
+          <li>人前で詰める、晒す、皮肉る</li>
+
+          <li>失敗時に役員・社員のせいだけにする</li>
+          <li>資金繰り・リスク・悪い数字から目をそらす</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEC SECTION -->
+<section id="exec-section" class="role-section">
+  <div class="container">
+    <div class="role-header reveal">
+      <div class="role-badge exec">役員</div>
+      <div class="role-title-block">
+        <div class="label" style="margin-bottom:0.5rem; color: var(--exec); opacity:0.7;">Section 03 — Executive</div>
+        <h2 class="role-title exec">役員の使命と規律</h2>
+        <p class="role-summary">役員は、社長が定めた方向を実行に変え、数字を持ち、組織を育て、全社視点で社長を支える人である。担当領域の数字に執着し、原資を残す。</p>
+      </div>
+    </div>
+
+    <div class="label" style="margin-bottom: 1.5rem;">— 役員の使命（求められること）</div>
+    <div class="mission-grid">
+      <div class="mission-item exec reveal reveal-delay-1">
+        <div class="mission-num">01</div>
+        <div class="mission-heading">事業結果責任</div>
+        <div class="mission-body">担当領域の数字に執着し、原資を残す。KPI・予算・利益構造を自分の数字として捉える。未達時には原因と打ち手を言語化し「こうする」まで示す。</div>
+      </div>
+      <div class="mission-item exec reveal reveal-delay-2">
+        <div class="mission-num">02</div>
+        <div class="mission-heading">実行統率力</div>
+        <div class="mission-body">決まったことを「誰が・何を・いつまで」に落とす。進捗を見える化し、遅れそうなら早めに共有する。壁があっても論理と熱量で突破し、最後までやり切る。</div>
+      </div>
+      <div class="mission-item exec reveal reveal-delay-1">
+        <div class="mission-num">03</div>
+        <div class="mission-heading">組織レジリエンス</div>
+        <div class="mission-body">問題を隠さず、早く、事実のまま報告する。有事には自分が矢面に立ち、収束まで責任を持つ。その場しのぎで終わらせず、再発しない仕組みに変える。</div>
+      </div>
+      <div class="mission-item exec reveal reveal-delay-2">
+        <div class="mission-num">04</div>
+        <div class="mission-heading">経営判断力</div>
+        <div class="mission-body">「どう思う？」に「こうする」で答える。選択肢・メリット・リスク・必要コストを整理する。社長が決めやすい状態を自分から作る。</div>
+      </div>
+      <div class="mission-item exec reveal reveal-delay-1">
+        <div class="mission-num">05</div>
+        <div class="mission-heading">人材育成</div>
+        <div class="mission-body">自分の右腕を最低1人以上育てる。部下を作業員にせず、強みを引き出す。権限委譲を進め、自分がいなくても回る状態を目指す。</div>
+      </div>
+      <div class="mission-item exec reveal reveal-delay-2">
+        <div class="mission-num">06</div>
+        <div class="mission-heading">経営視座</div>
+        <div class="mission-body">自部門より会社全体で考える。他部署の課題を他人事にしない。社長の壁打ち相手として、建設的に意見を出し、決定後は前向きに実行する。</div>
+      </div>
+    </div>
+
+    <div class="deco-divider"><span>×</span></div>
+
+    <div class="do-dont-grid">
+      <div class="list-box do-box reveal">
+        <div class="list-box-header">
+          <div class="list-icon do">✓</div>
+          <div class="list-box-title">役員がやること</div>
+        </div>
+        <ul class="do-dont-list">
+          <li>担当数字を自分のものとして執着する</li>
+          <li>未達時には原因と打ち手を自分で言語化する</li>
+          <li>問題を早く・事実のまま報告する</li>
+          <li>「こうする」まで意見を整理して示す</li>
+          <li>右腕を最低1人育てる</li>
+          <li>会社全体視点で社長の壁打ちをする</li>
+          <li>有事には自分が矢面に立つ</li>
+        </ul>
+      </div>
+      <div class="list-box dont-box reveal reveal-delay-2">
+        <div class="list-box-header">
+          <div class="list-icon dont">✕</div>
+          <div class="list-box-title">役員がやってはいけないこと</div>
+        </div>
+        <ul class="do-dont-list">
+          <li>問題やミスを隠す、報告を遅らせる</li>
+          <li>責任を市況・他部署・社長に転嫁する</li>
+          <li>判断材料を揃えず社長に丸投げする</li>
+          <li>決定事項への不満を社内に広める</li>
+          <li>自部門さえ良ければいいと振る舞う</li>
+          <li>部下育成を放棄し、抱え込み続ける</li>
+          <li>友達感覚で上下関係と礼節を崩す</li>
+          <li>緊急でないのに上位者の思考時間を奪う</li>
+
+          <li>「私はこんなにやった」と成果を手柄として振りかざす</li>
+          <li>「言われる筋合いがない」という態度を取る</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF SECTION -->
+<section id="staff-section" class="role-section">
+  <div class="container">
+    <div class="role-header reveal">
+      <div class="role-badge staff">社員</div>
+      <div class="role-title-block">
+        <div class="label" style="margin-bottom:0.5rem; color: var(--staff); opacity:0.7;">Section 04 — Staff</div>
+        <h2 class="role-title staff">社員の使命と規律</h2>
+        <p class="role-summary">社員は、任された役割を高水準で遂行し、報連相と改善によって組織成果に貢献する人である。</p>
+      </div>
+    </div>
+
+    <div class="label" style="margin-bottom: 1.5rem;">— 社員の使命（求められること）</div>
+    <div class="mission-grid">
+      <div class="mission-item staff reveal reveal-delay-1">
+        <div class="mission-num">01</div>
+        <div class="mission-heading">任された役割をやり切る</div>
+        <div class="mission-body">自分の業務を期限・品質・再現性を意識して遂行する。指示された内容を正しく理解し、必要な行動に落とす。</div>
+      </div>
+      <div class="mission-item staff reveal reveal-delay-2">
+        <div class="mission-num">02</div>
+        <div class="mission-heading">報連相を整える</div>
+        <div class="mission-body">報告・連絡・相談を分ける。問題は隠さず、早めに共有する。相談時には背景・論点・自分の考えを持つ。</div>
+      </div>
+      <div class="mission-item staff reveal reveal-delay-1">
+        <div class="mission-num">03</div>
+        <div class="mission-heading">改善する</div>
+        <div class="mission-body">ただ言われたことをやるだけで終わらず、精度と効率を上げる。同じミスを繰り返さない。指摘を受けたら感情で止まらず改善する。</div>
+      </div>
+      <div class="mission-item staff reveal reveal-delay-2">
+        <div class="mission-num">04</div>
+        <div class="mission-heading">チーム成果に貢献する</div>
+        <div class="mission-body">自分の仕事が前後工程や他部署とつながっていることを理解する。協力が必要な場面では、受け身ではなく前向きに動く。</div>
+      </div>
+      <div class="mission-item staff reveal" style="grid-column: 1 / -1;">
+        <div class="mission-num">05</div>
+        <div class="mission-heading">ルールと礼節を守る</div>
+        <div class="mission-body">会社のルール、指示系統、テキスト文化、時間の使い方を守る。上位者に対して、礼節を持って接する。</div>
+      </div>
+    </div>
+
+    <div class="deco-divider"><span>×</span></div>
+
+    <div class="do-dont-grid">
+      <div class="list-box do-box reveal">
+        <div class="list-box-header">
+          <div class="list-icon do">✓</div>
+          <div class="list-box-title">社員がやること</div>
+        </div>
+        <ul class="do-dont-list">
+          <li>期限・品質・再現性を意識して業務を遂行する</li>
+          <li>問題は隠さず早めに共有する</li>
+          <li>相談時は背景・論点・自分の案を持つ</li>
+          <li>同じミスを繰り返さない改善をする</li>
+          <li>指摘を感情で止まらず改善に変換する</li>
+          <li>他部署とのつながりを意識して動く</li>
+        </ul>
+      </div>
+      <div class="list-box dont-box reveal reveal-delay-2">
+        <div class="list-box-header">
+          <div class="list-icon dont">✕</div>
+          <div class="list-box-title">社員がやってはいけないこと</div>
+        </div>
+        <ul class="do-dont-list">
+          <li>指示を忘れる、無視する、勝手に改変する</li>
+          <li>わからないまま放置する</li>
+          <li>問題を隠す、報告を遅らせる</li>
+          <li>「言われてないので」で思考停止する</li>
+          <li>調べればわかることをすぐ人に聞く</li>
+          <li>テキストで済むことを口頭で持ち込む</li>
+          <li>上位者にアポなし・整理なしで話しかける</li>
+          <li>フィードバックに拗ねる、ふてくされる</li>
+          <li>他責にする。他部署や上司の愚痴を広げる</li>
+          <li>業務中の上下関係を友達感覚で崩す</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMON RULES -->
+<section id="common">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="section-intro-line"></div>
+      <div>
+        <div class="label" style="margin-bottom:0.75rem;">Section 05</div>
+        <h2 class="section-title">全階層共通で<br>守るべきこと</h2>
+      </div>
+    </div>
+
+    <div class="rules-grid">
+      <div class="rule-card reveal reveal-delay-1">
+        <div class="rule-card-num">01</div>
+        <div class="rule-card-title">事実ベースで話す</div>
+        <div class="rule-card-body">感情より先に事実。印象より先に数字。評価より先に状況整理。</div>
+      </div>
+      <div class="rule-card reveal reveal-delay-2">
+        <div class="rule-card-num">02</div>
+        <div class="rule-card-title">問題を隠さない</div>
+        <div class="rule-card-body">悪い報告ほど早く上げる。後から発覚する状態を作らない。</div>
+      </div>
+      <div class="rule-card reveal reveal-delay-3">
+        <div class="rule-card-num">03</div>
+        <div class="rule-card-title">決めたことを文字に残す</div>
+        <div class="rule-card-body">口頭で済ませない。結論・責任者・期限・見直し時期を残す。</div>
+      </div>
+      <div class="rule-card reveal reveal-delay-1">
+        <div class="rule-card-num">04</div>
+        <div class="rule-card-title">礼節を守る</div>
+        <div class="rule-card-body">礼節は堅苦しさではなく、組織運営コストを下げるための規律である。雑な言葉遣い・雑な距離感を当たり前にしない。</div>
+      </div>
+      <div class="rule-card reveal reveal-delay-2">
+        <div class="rule-card-num">05</div>
+        <div class="rule-card-title">友達感覚で運営しない</div>
+        <div class="rule-card-body">仲が良いことと、序列がないことは別である。業務中は責任範囲に応じた距離感を守る。</div>
+      </div>
+      <div class="rule-card reveal reveal-delay-3">
+        <div class="rule-card-num">06</div>
+        <div class="rule-card-title">感情で組織を動かさない</div>
+        <div class="rule-card-body">拗ねる、ふてくされる、逆ギレする、被害者意識に逃げる――は全階層NG。改善・実行・再発防止に変換する。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTAL HEALTH SECTION -->
+<section id="mental">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="section-intro-line"></div>
+      <div>
+        <div class="label" style="margin-bottom:0.75rem;">Section 06</div>
+        <h2 class="section-title">メンタル管理の<br>役割と範囲</h2>
+      </div>
+    </div>
+
+    <p class="reveal" style="font-size:0.85rem; color:var(--text-mid); max-width:640px; line-height:2; margin-bottom:3.5rem;">
+      メンタルケアは「関与しない」ではなく、<strong style="color:var(--text);">役職ごとに関与の深さと責任範囲を正しく理解する</strong>ことが重要。深入りしすぎること・無関心でいることの両方がリスクになる。
+    </p>
+
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem; margin-bottom:3rem;">
+
+      <!-- 社長 -->
+      <div class="reveal reveal-delay-1" style="border:1px solid var(--ceo-border); background:var(--ceo-dim); padding:2rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-size:6rem; color:rgba(201,160,96,0.05); line-height:1; pointer-events:none; user-select:none;">社長</div>
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--ceo); margin-bottom:0.5rem;">CEO — 社長</div>
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:1.25rem; font-style:italic;">制度・文化レベルで予防する責任</div>
+        <ul style="list-style:none; font-size:0.78rem; color:var(--text-mid); display:flex; flex-direction:column;">
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--ceo);font-size:0.6rem;top:0.7rem;">▶</span>職場環境・文化レベルでのメンタル予防策を整備する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--ceo);font-size:0.6rem;top:0.7rem;">▶</span>相談窓口・メンタルケア制度の設計・導入を決定する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--ceo);font-size:0.6rem;top:0.7rem;">▶</span>重篤なケース（休職・退職等）の最終判断に関与する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--ceo);font-size:0.6rem;top:0.7rem;">▶</span>個別の傾聴・1on1は原則しない（役員・部長に委ねる）</li>
+          <li style="padding:0.55rem 0; padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">個人のプライベートや深層心理に踏み込まない</span></li>
+        </ul>
+      </div>
+
+      <!-- 役員 -->
+      <div class="reveal reveal-delay-2" style="border:1px solid var(--exec-border); background:var(--exec-dim); padding:2rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-size:6rem; color:rgba(122,172,190,0.05); line-height:1; pointer-events:none; user-select:none;">役員</div>
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--exec); margin-bottom:0.5rem;">Executive — 役員</div>
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:1.25rem; font-style:italic;">部長への支援・専門機関連携の主担当</div>
+        <ul style="list-style:none; font-size:0.78rem; color:var(--text-mid); display:flex; flex-direction:column;">
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--exec);font-size:0.6rem;top:0.7rem;">▶</span>部長から上がった深刻なケースを受け、対応方針を決める</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--exec);font-size:0.6rem;top:0.7rem;">▶</span>産業医・社外専門機関への連携を主導する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--exec);font-size:0.6rem;top:0.7rem;">▶</span>業務量・配置転換など構造的な環境調整を判断する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--exec);font-size:0.6rem;top:0.7rem;">▶</span>部長が抱え込んでいないか定期的に確認する</li>
+          <li style="padding:0.55rem 0; padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">評価・査定にメンタル状態を直接使用しない</span></li>
+        </ul>
+      </div>
+
+      <!-- 部長 -->
+      <div class="reveal reveal-delay-3" style="border:1px solid rgba(180,160,220,0.25); background:rgba(180,160,220,0.06); padding:2rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-size:6rem; color:rgba(180,160,220,0.04); line-height:1; pointer-events:none; user-select:none;">部長</div>
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(180,160,220,0.8); margin-bottom:0.5rem;">Manager — 部長</div>
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:1.25rem; font-style:italic;">部内の一次受け・エスカレーション判断</div>
+        <ul style="list-style:none; font-size:0.78rem; color:var(--text-mid); display:flex; flex-direction:column;">
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.7);font-size:0.6rem;top:0.7rem;">▶</span>課長からの報告を受け、深刻度を判断する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.7);font-size:0.6rem;top:0.7rem;">▶</span>業務量の調整・席替えなど環境変更を実施する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.7);font-size:0.6rem;top:0.7rem;">▶</span>必要に応じて役員・人事へエスカレーションする</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.7);font-size:0.6rem;top:0.7rem;">▶</span>当事者と1on1で状況を確認する（傾聴・受容まで）</li>
+          <li style="padding:0.55rem 0; padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">一人で抱え込まず、必ず上に報告する</span></li>
+        </ul>
+      </div>
+
+      <!-- 課長 -->
+      <div class="reveal reveal-delay-1" style="border:1px solid rgba(180,160,220,0.18); background:rgba(180,160,220,0.04); padding:2rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-size:6rem; color:rgba(180,160,220,0.03); line-height:1; pointer-events:none; user-select:none;">課長</div>
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(180,160,220,0.6); margin-bottom:0.5rem;">Section Chief — 課長</div>
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:1.25rem; font-style:italic;">最前線の観察・傾聴・報告の主担当</div>
+        <ul style="list-style:none; font-size:0.78rem; color:var(--text-mid); display:flex; flex-direction:column;">
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.6);font-size:0.6rem;top:0.7rem;">▶</span>チームメンバーの業務上の変化（遅刻・ミス・沈黙）を観察する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.6);font-size:0.6rem;top:0.7rem;">▶</span>定期1on1で「最近どうですか」と声をかけ、傾聴する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.6);font-size:0.6rem;top:0.7rem;">▶</span>異変を感じたら速やかに部長へ事実ベースで報告する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(180,160,220,0.6);font-size:0.6rem;top:0.7rem;">▶</span>相談窓口・産業医の存在を本人に伝える</li>
+          <li style="padding:0.55rem 0; padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">プライベート・家庭事情に踏み込んで聞かない</span></li>
+        </ul>
+      </div>
+
+      <!-- 主任 -->
+      <div class="reveal reveal-delay-2" style="border:1px solid var(--staff-border); background:var(--staff-dim); padding:2rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-size:6rem; color:rgba(150,184,150,0.04); line-height:1; pointer-events:none; user-select:none;">主任</div>
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--staff); margin-bottom:0.5rem;">Lead — 主任</div>
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:1.25rem; font-style:italic;">日常観察・声かけ・課長への橋渡し</div>
+        <ul style="list-style:none; font-size:0.78rem; color:var(--text-mid); display:flex; flex-direction:column;">
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--staff);font-size:0.6rem;top:0.7rem;">▶</span>隣で働くメンバーの様子の変化に気づく</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--staff);font-size:0.6rem;top:0.7rem;">▶</span>「大丈夫ですか」と一言声をかけ、話を聞く姿勢を見せる</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--staff);font-size:0.6rem;top:0.7rem;">▶</span>深刻そうなら課長に「○○さんの様子が気になります」と報告する</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">問題を自分だけで解決しようとしない</span></li>
+          <li style="padding:0.55rem 0; padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">「気合いで乗り越えよう」など精神論を言わない</span></li>
+        </ul>
+      </div>
+
+      <!-- 一般・新人 -->
+      <div class="reveal reveal-delay-3" style="border:1px solid rgba(150,184,150,0.15); background:rgba(150,184,150,0.03); padding:2rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-size:6rem; color:rgba(150,184,150,0.03); line-height:1; pointer-events:none; user-select:none;">社員</div>
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(150,184,150,0.6); margin-bottom:0.5rem;">Member / Junior — 一般・新人</div>
+        <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:1.25rem; font-style:italic;">自己管理・SOS発信が最大の責務</div>
+        <ul style="list-style:none; font-size:0.78rem; color:var(--text-mid); display:flex; flex-direction:column;">
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(150,184,150,0.6);font-size:0.6rem;top:0.7rem;">▶</span>自分の体調・精神状態を自覚し、言語化する習慣を持つ</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(150,184,150,0.6);font-size:0.6rem;top:0.7rem;">▶</span>しんどいときは「しんどいです」と主任・課長に伝える</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:rgba(150,184,150,0.6);font-size:0.6rem;top:0.7rem;">▶</span>相談窓口・産業医が使えることを知っておく</li>
+          <li style="padding:0.55rem 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">我慢して黙って限界まで続けない</span></li>
+          <li style="padding:0.55rem 0; padding-left:1rem; position:relative; line-height:1.6;"><span style="position:absolute;left:0;color:var(--dont);font-size:0.6rem;top:0.7rem;">✕</span><span style="color:var(--dont);">同僚のメンタル問題を一人で抱え込まない（上に報告）</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 全階層共通NG -->
+    <div class="reveal" style="margin-bottom:1.5rem;">
+      <!-- 課長以上への特別ルール（大きく表示） -->
+      <div style="padding:2rem 2.5rem; background:rgba(194,112,112,0.06); border:1px solid rgba(194,112,112,0.3); border-left:3px solid var(--dont); margin-bottom:1rem;">
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--dont); margin-bottom:1rem;">課長以上への特別ルール</div>
+        <div style="font-family:'Noto Serif JP', serif; font-size:1.1rem; font-weight:400; color:var(--text); line-height:1.8; margin-bottom:0.75rem;">
+          課長以上は、感情的なメンタルケアを<br>上司に求めない。
+        </div>
+        <div style="font-size:0.8rem; color:var(--text-mid); line-height:1.9; max-width:640px;">
+          業務量過多・人員不足などの<strong style="color:var(--text);">構造的な問題のエスカレーションは必要</strong>であり、適切に行う。<br>
+          しかし「しんどい・話を聞いてほしい・励ましてほしい」という感情的サポートを上司に求めることは、組織の機能不全を招く。<br>
+          課長以上は、感情の処理を自己完結させるか、社外（家族・友人・専門家）に向ける。
+        </div>
+      </div>
+
+      <!-- 共通NGリスト -->
+      <div style="padding:1.5rem 2rem; background:rgba(194,112,112,0.03); border:1px solid rgba(194,112,112,0.15);">
+        <div style="font-family:'Rajdhani',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--dont); margin-bottom:1rem; opacity:0.8;">全役職 共通NG</div>
+        <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:0.5rem 2rem;">
+          <div style="font-size:0.78rem; color:var(--text-mid); padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.04);">プライベート・家庭事情に踏み込む</div>
+          <div style="font-size:0.78rem; color:var(--text-mid); padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.04);">「気合い・根性」で精神論対処する</div>
+          <div style="font-size:0.78rem; color:var(--text-mid); padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.04);">メンタル状態を評価・査定に使う</div>
+          <div style="font-size:0.78rem; color:var(--text-mid); padding:0.4rem 0;">上長への報告なしに個人で抱え込む</div>
+          <div style="font-size:0.78rem; color:var(--text-mid); padding:0.4rem 0;">専門家の代わりに治療的アドバイスをする</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- EVALUATION COMPARISON -->
+<section id="eval">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="section-intro-line"></div>
+      <div>
+        <div class="label" style="margin-bottom:0.75rem;">Section 07</div>
+      </div>
+    </div>
+
+    <div class="eval-grid">
+      <div class="reveal">
+        <div class="eval-col-header pos">
+          <div class="eval-col-icon pos">▲</div>
+          <div class="eval-col-title pos">この会社で評価される人</div>
+        </div>
+        <div class="eval-items">
+          <div class="eval-item pos">責任から逃げない人</div>
+          <div class="eval-item pos">数字を持てる人</div>
+          <div class="eval-item pos">事実とロジックで話せる人</div>
+          <div class="eval-item pos">決めたことをやり切る人</div>
+          <div class="eval-item pos">問題を隠さない人</div>
+          <div class="eval-item pos">他責にしない人</div>
+          <div class="eval-item pos">礼節と上下関係を守れる人</div>
+          <div class="eval-item pos">部門最適ではなく、全体最適で考えられる人</div>
+          <div class="eval-item pos">感情ではなく改善で返せる人</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="eval-col-header neg">
+          <div class="eval-col-icon neg">▼</div>
+          <div class="eval-col-title neg">この会社で評価されない人</div>
+        </div>
+        <div class="eval-items">
+          <div class="eval-item neg">役割より感情を優先する人</div>
+          <div class="eval-item neg">「言われないとわからない」を当然のように言う人</div>
+          <div class="eval-item neg">問題を隠す人</div>
+          <div class="eval-item neg">他責が強い人</div>
+          <div class="eval-item neg">陰で不満や悪口を広げる人</div>
+          <div class="eval-item neg">上位者の時間を雑に奪う人</div>
+          <div class="eval-item neg">メンバーを友達感覚で捉えている人</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION FLOWCHART -->
+<section id="consult">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="section-intro-line"></div>
+      <div>
+        <div class="label" style="margin-bottom:0.75rem;">Section 08</div>
+        <h2 class="section-title">話しかけ・相談の<br>判断フロー</h2>
+      </div>
+    </div>
+
+    <div class="talk-rules reveal">
+      <div class="talk-rule-item">緊急時以外は、まずテキストで送る</div>
+      <div class="talk-rule-item">AIや既存資料で整理できることは先に自分で調べる</div>
+      <div class="talk-rule-item">「話したほうが早い」は自分都合で乱用しない</div>
+      <div class="talk-rule-item">上位者ほど思考時間の価値が高いことを理解する</div>
+      <div class="talk-rule-item">相談時は「背景・論点・選択肢・自分の案」を持つ</div>
+      <div class="talk-rule-item">口頭相談は、要点整理とアポを前提にする</div>
+    </div>
+
+    <div class="flowchart-wrap reveal">
+      <div class="flow-title">Consultation Decision Flow — 相談前の判断フロー</div>
+      <div class="fc">
+
+        <div class="fc-row">
+          <div class="fc-node start">
+            📋 &nbsp;相談・話しかけたいことが発生した
+          </div>
+        </div>
+
+        <div style="width:1px; height:2rem; background: var(--border); margin-left:2rem; position:relative;">
+          <span style="position:absolute;bottom:-0.5rem;left:50%;transform:translateX(-50%);font-size:0.65rem;color:var(--text-dim);">↓</span>
+        </div>
+
+        <div class="fc-row">
+          <div class="fc-node question">
+            緊急事態（今すぐ対応しないと損害が出る）か？
+          </div>
+        </div>
+
+        <div class="fc-branch" style="margin-top: 1rem;">
+          <div class="fc-branch-item">
+            <div class="fc-branch-label" style="color: var(--do);">YES — 緊急</div>
+            <div class="fc-node action-good" style="height:100%;">
+              即座に口頭・電話で連絡。状況・影響・対応案をまとめながら動く。
+            </div>
+          </div>
+          <div class="fc-branch-item">
+            <div class="fc-branch-label" style="color: var(--exec);">NO — 通常</div>
+            <div class="fc-node question" style="height:100%;">
+              AIや既存資料・マニュアルで解決できるか？
+            </div>
+          </div>
+        </div>
+
+        <div style="width:1px; height:2rem; background: var(--border); margin-left: calc(75% - 1px); position:relative;">
+          <span style="position:absolute;bottom:-0.5rem;left:50%;transform:translateX(-50%);font-size:0.65rem;color:var(--text-dim);">↓</span>
+        </div>
+
+        <div class="fc-branch" style="margin-left: 50%; width: 50%;">
+          <div class="fc-branch-item">
+            <div class="fc-branch-label" style="color: var(--do);">YES</div>
+            <div class="fc-node action-good">
+              自分で解決する。解決した内容は記録しておく。
+            </div>
+          </div>
+          <div class="fc-branch-item">
+            <div class="fc-branch-label" style="color: var(--exec);">NO</div>
+            <div class="fc-node question">
+              背景・論点・選択肢・自分の案は整理できているか？
+            </div>
+          </div>
+        </div>
+
+        <div style="width:1px; height:2rem; background: var(--border); margin-left: calc(87.5% - 1px); position:relative;">
+          <span style="position:absolute;bottom:-0.5rem;left:50%;transform:translateX(-50%);font-size:0.65rem;color:var(--text-dim);">↓</span>
+        </div>
+
+        <div class="fc-branch" style="margin-left: 75%; width: 25%;">
+          <div class="fc-branch-item">
+            <div class="fc-branch-label" style="color: var(--dont);">NO</div>
+            <div class="fc-node action-bad">
+              未整理のまま話しかける
+            </div>
+          </div>
+          <div class="fc-branch-item">
+            <div class="fc-branch-label" style="color: var(--do);">YES</div>
+            <div class="fc-node question">
+              テキスト（Slack等）で送れる内容か？
+            </div>
+          </div>
+        </div>
+
+        <div style="width:1px; height:2rem; background: var(--border); margin-left: calc(93.75% - 1px); position:relative;">
+          <span style="position:absolute;bottom:-0.5rem;left:50%;transform:translateX(-50%);font-size:0.65rem;color:var(--text-dim);">↓</span>
+        </div>
+
+        <div class="fc-branch" style="margin-left: 87.5%; width: 12.5%;">
+          <div class="fc-branch-item" style="min-width:unset;">
+            <div class="fc-branch-label" style="color: var(--do);">YES</div>
+            <div class="fc-node action-good" style="min-width:120px;">
+              テキストで送信
+            </div>
+          </div>
+        </div>
+
+        <div class="fc-divider" style="margin-top: 2rem;"></div>
+
+        <!-- Simplified linear flow for oral -->
+        <div class="label" style="margin-bottom: 1rem;">— 口頭相談が必要な場合のフロー</div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; width:100%;">
+          <div style="padding:1rem; background: var(--surface); border:1px solid var(--border); font-size:0.75rem; color:var(--text-mid); text-align:center; line-height:1.6;">
+            <div style="color:var(--accent); font-size:1.5rem; font-family:'DM Serif Display',serif; line-height:1; margin-bottom:0.5rem;">01</div>
+            背景・論点・<br>選択肢・自分の案を整理
+          </div>
+          <div style="padding:1rem; background: var(--surface); border:1px solid var(--border); font-size:0.75rem; color:var(--text-mid); text-align:center; line-height:1.6;">
+            <div style="color:var(--accent); font-size:1.5rem; font-family:'DM Serif Display',serif; line-height:1; margin-bottom:0.5rem;">02</div>
+            テキストでアポを取る<br>（目安の時間も示す）
+          </div>
+          <div style="padding:1rem; background: var(--surface); border:1px solid var(--border); font-size:0.75rem; color:var(--text-mid); text-align:center; line-height:1.6;">
+            <div style="color:var(--accent); font-size:1.5rem; font-family:'DM Serif Display',serif; line-height:1; margin-bottom:0.5rem;">03</div>
+            相手の時間が取れたら<br>口頭で相談
+          </div>
+          <div style="padding:1rem; background: var(--surface); border:1px solid var(--border); font-size:0.75rem; color:var(--text-mid); text-align:center; line-height:1.6;">
+            <div style="color:var(--accent); font-size:1.5rem; font-family:'DM Serif Display',serif; line-height:1; margin-bottom:0.5rem;">04</div>
+            決定事項・次のアクションを<br>テキストで記録
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="section-intro-line"></div>
+      <div>
+        <div class="label" style="margin-bottom:0.75rem;">Section 09</div>
+        <h2 class="section-title">一文要約</h2>
+      </div>
+    </div>
+
+    <div class="summary-cards">
+      <div class="summary-card ceo reveal reveal-delay-1">
+        <div class="summary-card-bg">社長</div>
+        <div class="summary-role">CEO — 社長</div>
+        <p class="summary-text">社長は、方向・配置・原資・文化を決め、最後に判断し、最後に責任を取る人である。</p>
+      </div>
+      <div class="summary-card exec reveal reveal-delay-2">
+        <div class="summary-card-bg">役員</div>
+        <div class="summary-role">Executive — 役員</div>
+        <p class="summary-text">役員は、社長が定めた方向を実行に変え、数字を持ち、組織を育て、全社視点で社長を支える人である。</p>
+      </div>
+      <div class="summary-card staff reveal reveal-delay-3">
+        <div class="summary-card-bg">社員</div>
+        <div class="summary-role">Staff — 社員</div>
+        <p class="summary-text">社員は、任された役割を高水準で遂行し、報連相と改善によって組織成果に貢献する人である。</p>
+      </div>
+    </div>
+
+    <div class="final-statement reveal">
+      <p>この会社は、<strong>責任範囲に応じた序列・礼節・報連相・実行責任</strong>の上に成り立っており、友達感覚や他責、感情優先で動くことは許されない。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    <div class="label">Bremen株式会社 — 組織規範マニュアル</div>
+    <div class="label">中野区新井1-12-8 3F</div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
