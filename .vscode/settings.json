@@ -1,3 +1,20 @@
 {
-  "accessibility.voice.speechLanguage": "ja-JP"
+    "accessibility.voice.speechLanguage": "ja-JP",
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#d7ccc8",
+        "titleBar.activeForeground": "#3e2723",
+        "activityBar.background": "#e0d6d0",
+        "activityBar.foreground": "#3e2723",
+        "sideBar.background": "#ebe4dc",
+        "sideBar.foreground": "#3e2723",
+        "editor.background": "#f5f0eb",
+        "editor.foreground": "#3e2723",
+        "editorGroupHeader.tabsBackground": "#ebe4dc",
+        "tab.activeBackground": "#f5f0eb",
+        "tab.inactiveBackground": "#ebe4dc",
+        "statusBar.background": "#c8b8a8",
+        "statusBar.foreground": "#3e2723",
+        "panel.background": "#ebe4dc",
+        "terminal.background": "#f5f0eb"
+    }
 }
